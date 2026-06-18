@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS AI • Next-Gen Artificial Intelligence Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #00f5ff;
+            --accent: #7b2cbf;
+            --dark: #0a0a0a;
+            --light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: white;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(circle at center, #1a0033 0%, #0a0a0a 70%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(0, 245, 255, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(90deg, #ffffff, var(--primary), #c026d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #a5b4fc;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #7b2cbf);
+            color: black;
+            font-size: 1.1rem;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        /* Sections */
+        section {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 80px;
+            background: linear-gradient(90deg, white, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.4s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--primary);
+            box-shadow: 0 30px 60px rgba(0, 245, 255, 0.15);
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin: 20px 0 15px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: #050505;
+            padding: 60px 0 30px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .glow {
+            text-shadow: 0 0 30px var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">NEXUS<span style="color:var(--primary)">AI</span></div>
+        <div style="color:#888; font-size:0.95rem;">Premium AI Solutions by Takeshwar</div>
+    </nav>
+
+    <!-- Back to Home Button -->
+    <a href="index.html" 
+       style="position: fixed; top: 25px; left: 25px; z-index: 9999; 
+              background: rgba(0,0,0,0.85); color: white; padding: 12px 22px; 
+              border-radius: 50px; text-decoration: none; font-weight: 600; 
+              display: flex; align-items: center; gap: 8px; backdrop-filter: blur(12px);
+              box-shadow: 0 4px 20px rgba(0,0,0,0.4); font-size: 1rem;">
+        ← Back to Home
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content">
+            <div class="badge">✦ INTELLIGENCE REIMAGINED ✦</div>
+            <h1 class="glow">The Future of<br>Artificial Intelligence</h1>
+            <p class="subtitle">We build intelligent systems that don't just automate — they understand, create, and evolve with your vision.</p>
+            
+            <div class="cta-buttons">
+                <a href="#features" class="btn btn-primary">Explore Capabilities</a>
+                <a href="https://wa.me/917024897454" target="_blank" class="btn btn-outline">Work With Takeshwar</a>
+            </div>
+
+            <div style="margin-top: 60px; font-size: 0.95rem; opacity: 0.7;">
+                Trusted by visionary creators &amp; forward-thinking businesses
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+        <h2 class="section-title">Why NEXUS AI Stands Apart</h2>
+        
+        <div class="features">
+            <div class="feature-card">
+                <h3>01 • Generative Intelligence</h3>
+                <p>Advanced AI models capable of creating stunning videos, images, scripts, and complete marketing campaigns from simple prompts.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>02 • Real-Time Video Editing</h3>
+                <p>AI-powered video editor that understands context, emotion, and pacing. Cut hours of work into minutes with intelligent automation.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>03 • Autonomous Agents</h3>
+                <p>Custom AI agents that handle customer support, content strategy, research, and data analysis 24/7.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>04 • Hyper-Personalization</h3>
+                <p>AI systems that learn from your brand voice and audience to deliver perfectly tailored content at scale.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>05 • Ethical &amp; Private AI</h3>
+                <p>Secure, private, and transparent AI solutions. Your data never leaves your control.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>06 • Lightning Integration</h3>
+                <p>Seamlessly connects with your existing tools — YouTube, Instagram, Shopify, Notion, and more.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section style="background: #111; text-align: center;">
+        <div style="max-width: 1000px; margin: 0 auto; padding: 80px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+            <div>
+                <div style="font-size: 3.5rem; font-weight: 800; color: var(--primary);">98%</div>
+                <div style="margin-top: 10px; opacity: 0.8;">Client Satisfaction</div>
+            </div>
+            <div>
+                <div style="font-size: 3.5rem; font-weight: 800; color: var(--primary);">47x</div>
+                <div style="margin-top: 10px; opacity: 0.8;">Faster Content Creation</div>
+            </div>
+            <div>
+                <div style="font-size: 3.5rem; font-weight: 800; color: var(--primary);">120+</div>
+                <div style="margin-top: 10px; opacity: 0.8;">AI Projects Delivered</div>
+            </div>
+            <div>
+                <div style="font-size: 3.5rem; font-weight: 800; color: var(--primary);">∞</div>
+                <div style="margin-top: 10px; opacity: 0.8;">Creative Possibilities</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="text-align: center; padding: 140px 40px; background: linear-gradient(135deg, #0a0a0a, #1a0033);">
+        <h2 style="font-size: 3.2rem; max-width: 800px; margin: 0 auto 30px;">
+            Ready to unlock the power of truly intelligent AI?
+        </h2>
+        <a href="https://wa.me/917024897454?text=Hi%20Takeshwar,%20I%20want%20to%20discuss%20the%20NEXUS%20AI%20project." 
+           target="_blank" 
+           class="btn btn-primary" 
+           style="font-size: 1.3rem; padding: 20px 60px;">
+            Start Your AI Journey Today
+        </a>
+        <p style="margin-top: 40px; opacity: 0.7;">Built with passion by Takeshwar • Durg • Chhattisgarh</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 NEXUS AI • Premium Artificial Intelligence Solutions</p>
+    </footer>
+
+    <script>
+        // Simple scroll animation
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.feature-card').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.85) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="google-site-verification" content="pYBqOLOEltuhqYIntdcRnzorFnSPDZyZFceN8ygOC88" />
+    <title>Website Developer in Durg Bhilai Patan Anda Utai Chhattisgarh</title>
+    <meta name="description" content="Affordable website development services in Durg, Bhilai, Patan, Anda, Utai, Chirpoti, Machandur and Chhattisgarh.">
+    <meta name="robots" content="index,follow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takeshwar | Professional Web Developer</title>
+    
+    <!-- Importing a premium Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #111111;
+            --text-muted: #555555;
+            --accent-1: #3b82f6; /* Bright Blue */
+            --accent-2: #8b5cf6; /* Vibrant Purple */
+            --glass-bg: rgba(0, 0, 0, 0.03);
+            --glass-border: rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* -------------------------------------------
+           HYPER-DETAILED ANIMATED BACKGROUND (Light Version)
+           ------------------------------------------- */
+        .bg-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background-color: #f8fafc;
+            /* Light Tech Grid Overlay */
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Animated Glowing Blobs (Light Theme) */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.15;
+            animation: moveBlobs 25s infinite alternate ease-in-out;
+        }
+
+        .blob-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--accent-1);
+            top: -10%;
+            left: -10%;
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-2);
+            bottom: -10%;
+            right: -10%;
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            width: 300px;
+            height: 300px;
+            background: #ec4899;
+            top: 40%;
+            left: 40%;
+            animation-delay: -10s;
+        }
+
+        @keyframes moveBlobs {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(100px, 50px) scale(1.2); }
+        }
+
+        /* Glassmorphism Reusable Class */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Navigation */
+        header {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #111, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1rem;
+            transition: all 0.3s;
+            opacity: 0.8;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--accent-1);
+        }
+
+        /* Animation Classes */
+        .reveal {
+            position: relative;
+            transform: translateY(40px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 120px 0 80px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #111111 0%, #555555 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            max-width: 500px;
+            font-weight: 300;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #2563eb;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Graphic */
+        .hero-graphic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .graphic-box {
+            width: 100%;
+            max-width: 450px;
+            padding: 50px 40px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 60px;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(0, 0, 0, 0.03);
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Portfolio / Image Showcase */
+        .portfolio-showcase {
+            padding: 80px 0;
+            background: #f1f5f9;
+            text-align: center;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 50px auto 0;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.04);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(85%) contrast(1.1);
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-item:hover img {
+            filter: grayscale(40%);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Action Buttons */
+        .action-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-color);
+            padding: 16px 36px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-action.primary {
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            border: none;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+            color: white;
+        }
+
+        .btn-action:hover {
+            transform: translateY(-3px);
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-action.primary:hover {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            box-shadow: 0 15px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .contact-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: rgba(248, 250, 252, 0.9);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 60px 0;
+            }
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            .action-container {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+            .action-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btn-action {
+                width: 100%;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Light Animated Background -->
+    <div class="bg-layer">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container nav">
+            <div class="logo">Takeshwar.</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero-section reveal" id="about">
+            <div class="hero-text">
+                <span class="badge">
+                    <span style="display:inline-block; width:8px; height:8px; background:#60a5fa; border-radius:50%; box-shadow: 0 0 10px #60a5fa;"></span> 
+                    Available for Projects
+                </span>
+                <h1>Hi, I'm Takeshwar.<br>Web Developer.</h1>
+                <p>I design premium, lightning-fast, and highly polished websites for small businesses, local stores, professionals & creators in Chhattisgarh.</p>
+                <div class="action-container">
+                    <a href="#contact" class="btn-action primary">Let's Discuss</a>
+                    <a href="#services" class="btn-action">View Services</a>
+                </div>
+            </div>
+            
+            <div class="hero-graphic">
+                <div class="graphic-box glass-panel">
+                    <p style="font-size: 3rem; margin-bottom: 15px;">💻</p>
+                    <p style="color: #111; margin-bottom: 5px;">Clean Code.</p>
+                    <p style="color: #111; margin-bottom: 5px;">High Impact.</p>
+                    <p style="color: var(--accent-1);">Budget Friendly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services reveal" id="services">
+            <h2 class="section-title">My Architecture</h2>
+            <div class="services-grid">
+                
+                <div class="service-card glass-panel">
+                    <h3>1. Business Presence</h3>
+                    <p>Building tailored, high-performance static platforms designed to give your local brand, business, or shop a premium online identity.</p>
+                </div>
+
+                <div class="service-card glass-panel">
+                    <h3>2. Smart AI Optimization</h3>
+                    <p>Utilizing advanced AI resources during development phases to accelerate workflow, resulting in fast delivery and highly competitive pricing.</p>
+                </div>
+
+                <div class="service-card glass-panel">
+                    <h3>3. Seamless Response</h3>
+                    <p>Your web application will run smoothly on any device, automatically adapting its layout to mobile phones, iPads, laptops, and large desktop screens.</p>
+                </div>
+
+                <!-- New Service Added -->
+                <div class="service-card glass-panel">
+                    <h3>4. AI Video Creators & Video Editor</h3>
+                    <p>Professional AI-powered video creation, editing, motion graphics, and YouTube-ready content for creators, businesses & influencers.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Portfolio Showcase with 3 Black & White Images -->
+    <section class="portfolio-showcase" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="portfolio-grid">
+                
+                <!-- First Image -->
+                <a href="a.html" target="_blank" class="portfolio-item">
+                    <img src="https://picsum.photos/id/1015/600/400" alt="Project 1">
+                    <div class="portfolio-overlay">AI web develop</div>
+                </a>
+
+                <!-- Second Image -->
+                <a href="b.html" target="_blank" class="portfolio-item">
+                    <img src="https://picsum.photos/id/201/600/400" alt="Project 2">
+                    <div class="portfolio-overlay"> personal web</div>
+                </a>
+
+                <!-- Third Image -->
+                <a href="c.html" target="_blank" class="portfolio-item">
+                    <img src="https://picsum.photos/id/251/600/400" alt="Project 3">
+                    <div class="portfolio-overlay">Business Website </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Contact Section -->
+        <section class="contact-section reveal" id="contact">
+            <h2 class="section-title">Connect With Me</h2>
+            <p class="contact-subtitle">Skip the complicated contact forms. Connect with me directly below:</p>
+            
+            <div class="action-container" style="justify-content: center;">
+                <a href="https://wa.me/917024897454?text=Hi%20Takeshwar,%20I%20want%20to%20discuss%20a%20website%20or%20video%20project." target="_blank" class="btn-action">
+                    💬 WhatsApp Message
+                </a>
+                <a href="tel:+917024897454" class="btn-action primary">
+                    📞 Direct Call
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Takeshwar Web Developer. Built for high performance.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function revealElements() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 120;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", revealElements);
+        window.addEventListener("load", revealElements);
+    </script>
+</body>
+</html>

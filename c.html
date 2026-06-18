@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS GEAR • Premium Lifestyle Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #00f5ff;
+            --accent: #ff3b5c;
+            --dark: #0a0a0a;
+            --gray: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: #eee;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 35px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.75rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://picsum.photos/id/1015/1920/1080') center/cover;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4.8rem;
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            background: var(--primary);
+            color: black;
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.4s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 245, 255, 0.4);
+        }
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.2rem;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* Products */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 50px;
+        }
+
+        .product-card {
+            background: var(--gray);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.5s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 30px 60px rgba(0, 245, 255, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 35px;
+        }
+
+        .product-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 1.6rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: #ff5e7a;
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-content {
+            background: #111;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        footer {
+            background: #050505;
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+ <!-- Navbar with Back Button to index.html -->
+   <nav class="navbar">
+       <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>       <div class="logo">NEXUS<span style="color:var(--primary)">GEAR</span></div>
+        <div class="nav-links">
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elevate Your Everyday</h1>
+            <p>Premium audio and apparel engineered for those who demand excellence.</p>
+            <a href="#shop" class="cta-btn">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop">
+        <div class="container">
+            <h2 class="section-title">Signature Collection</h2>
+            
+            <div class="products-grid">
+
+                <!-- Headphones -->
+                <div class="product-card">
+                    <img src="https://picsum.photos/id/180/800/600" alt="Premium Wireless Headphones">
+                    <div class="product-info">
+                        <h3>SONORA X1 Wireless Headphones</h3>
+                        <p style="opacity:0.8; margin-bottom:15px;">Active Noise Cancelling • 40H Battery • Spatial Audio</p>
+                        <div class="price">₹8,999</div>
+                        <ul style="margin:20px 0; font-size:0.95rem; opacity:0.9;">
+                            <li>✓ Premium ANC Technology</li>
+                            <li>✓ 40-Hour Playtime</li>
+                            <li>✓ Touch Controls + Voice Assistant</li>
+                            <li>✓ Ultra-comfort Memory Foam Ear Cups</li>
+                        </ul>
+                        <button onclick="addToCart(0)" class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- T-Shirt -->
+                <div class="product-card">
+                    <img src="https://picsum.photos/id/201/800/600" alt="Premium Oversized T-Shirt">
+                    <div class="product-info">
+                        <h3>ESSENTIAL Minimalist T-Shirt</h3>
+                        <p style="opacity:0.8; margin-bottom:15px;">Premium Organic Cotton • Oversized Fit • Black</p>
+                        <div class="price">₹1,899</div>
+                        <ul style="margin:20px 0; font-size:0.95rem; opacity:0.9;">
+                            <li>✓ 100% Organic Cotton</li>
+                            <li>✓ Ultra-Soft & Breathable</li>
+                            <li>✓ Reinforced Double Stitching</li>
+                            <li>✓ Timeless Minimal Design</li>
+                        </ul>
+                        <button onclick="addToCart(1)" class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section style="background: var(--gray);">
+        <div class="container">
+            <h2 class="section-title">Why NEXUS GEAR</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3 style="color:var(--primary); font-size:2.5rem;">01</h3>
+                    <h4>Premium Quality</h4>
+                    <p>Handpicked materials and meticulous craftsmanship</p>
+                </div>
+                <div class="feature">
+                    <h3 style="color:var(--primary); font-size:2.5rem;">02</h3>
+                    <h4>Fast Shipping</h4>
+                    <p>Delivered across Chhattisgarh & India in 2-5 days</p>
+                </div>
+                <div class="feature">
+                    <h3 style="color:var(--primary); font-size:2.5rem;">03</h3>
+                    <h4>Lifetime Support</h4>
+                    <p>Dedicated customer service & easy returns</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
+                <div>
+                    <h2 class="section-title" style="text-align:left;">Our Story</h2>
+                    <p style="font-size:1.2rem; margin-bottom:25px;">
+                        NEXUS GEAR was founded in Durg, Chhattisgarh with one mission — to deliver world-class lifestyle products at honest prices.
+                    </p>
+                    <p>
+                        From studio-grade audio to everyday essentials that feel luxurious, every product is carefully curated and designed for those who value quality and style.
+                    </p>
+                </div>
+                <img src="https://picsum.photos/id/251/800/600" alt="Brand Story" style="border-radius:20px; width:100%;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="background: var(--gray);">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div style="background:#111; padding:40px; border-radius:20px;">
+                    <p style="font-style:italic; margin-bottom:20px;">"The headphones are insane. Battery lasts forever and noise cancellation is better than brands costing double."</p>
+                    <strong>— Vikram Rao, Bhilai</strong>
+                </div>
+                <div style="background:#111; padding:40px; border-radius:20px;">
+                    <p style="font-style:italic; margin-bottom:20px;">"The t-shirt feels like luxury. Best quality I’ve found in India. Ordering more colors soon."</p>
+                    <strong>— Neha Sharma, Durg</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div style="text-align:center; max-width:600px; margin:0 auto;">
+                <p style="font-size:1.3rem; margin-bottom:30px;">
+                    Have questions? We reply fast.
+                </p>
+                <a href="https://wa.me/917024897454" target="_blank" style="color:var(--primary); font-size:1.4rem; text-decoration:none;">
+                    💬 WhatsApp: +91 70248 97454
+                </a>
+                <p style="margin-top:40px; opacity:0.8;">Durg • Bhilai • Chhattisgarh</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <h3 style="margin-bottom:25px;">Your Cart</h3>
+            <div id="cart-items"></div>
+            <div style="margin:30px 0; border-top:1px solid #333; padding-top:20px;">
+                <strong>Total: ₹<span id="cart-total">0</span></strong>
+            </div>
+            <button onclick="checkout()" style="width:100%; padding:18px; background:var(--primary); color:black; border:none; border-radius:50px; font-weight:600; font-size:1.1rem;">Proceed to Checkout</button>
+            <button onclick="toggleCart()" style="width:100%; margin-top:15px; padding:16px; background:transparent; border:2px solid #555; color:white; border-radius:50px;">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 NEXUS GEAR • Premium Lifestyle Products by Takeshwar</p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function addToCart(productIndex) {
+            const products = [
+                { name: "SONORA X1 Wireless Headphones", price: 8999 },
+                { name: "ESSENTIAL Minimalist T-Shirt", price: 1899 }
+            ];
+            
+            cart.push(products[productIndex]);
+            updateCartCount();
+            
+            // Simple feedback
+            const btns = document.querySelectorAll('.add-to-cart');
+            btns[productIndex].textContent = "Added ✓";
+            setTimeout(() => {
+                btns[productIndex].textContent = "Add to Cart";
+            }, 1500);
+        }
+
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            const itemsDiv = document.getElementById('cart-items');
+            let total = 0;
+            
+            itemsDiv.innerHTML = '';
+            
+            if (cart.length === 0) {
+                itemsDiv.innerHTML = '<p style="text-align:center; opacity:0.7;">Your cart is empty</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    total += item.price;
+                    itemsDiv.innerHTML += `
+                        <div style="display:flex; justify-content:space-between; margin:15px 0; padding-bottom:15px; border-bottom:1px solid #333;">
+                            <div>${item.name}</div>
+                            <div>₹${item.price}</div>
+                        </div>
+                    `;
+                });
+            }
+            
+            document.getElementById('cart-total').textContent = total;
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function checkout() {
+            if (cart.length === 0) return;
+            alert("Thank you! This is a demo store. In a real project, this would connect to payment gateway.");
+            cart = [];
+            updateCartCount();
+            toggleCart();
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
