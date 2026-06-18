@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://anujnishad40212-lang.github.io/Web-development-/sitemap.xml
